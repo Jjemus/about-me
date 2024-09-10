@@ -1,27 +1,32 @@
 <template>
   <div class="about-me-container">
     <div class="profile-section">
+      <nav class="nav">
+        <button @click="switchToEnglish">EN</button>
+        <button @click="switchToGerman">DE</button>
+        <button @click="switchToItalian">IT</button>
+      </nav>
+
       <div class="bio-polaroid">
         <PolaroidPhoto image-src="/img/me.jpg" caption="me" style="transform: rotate(3deg); z-index: 2"/>
       </div>
 
-      <h1>Hi!</h1>
+      <h1>{{$t("hi")}}</h1>
       <p class="bio-text">
-        My name is Peter Unterthurner and I'm a passionate web developer specializing in Vue.js, Java Spring, Python,
-        Typo3 (although i wish i wouldn't) and
-        other modern web technologies.
+        {{$t("greeting")}}
       </p>
 
       <p class="bio-text">
-        I enjoy solving complex problems and building elegant user experiences. During my professional life I've worked
-        on a variety of projects.
-        The bigger ones include: a web application for Insurance Providers, a WebApp Civil Protection Services, various
-        WebApps for snowmaking systems, and a Webpresence for a local chain of banks.
+        {{$t("tech")}}
       </p>
 
       <p class="bio-text">
-        In my free time, I love cooking, hiking and travelling the nordic countries (Although i wish i could do that
-        more often).
+        {{$t("projects")}}
+
+      </p>
+
+      <p class="bio-text">
+        {{$t("hobbies")}}
       </p>
 
       <div class="bio-polaroid">
@@ -30,16 +35,15 @@
       </div>
 
       <p class="bio-text">
-        I'm a big dog enthusiast and I have a lovely swiss mountain dog named Leif. He's my best friend and always keeps
-        me company while I'm coding.
-        Or more often he tries to distract me from coding so that I go on a walk with him.
+        {{$t("dog")}}
       </p>
       <a class="github-link" :href="githubUrl" target="_blank">
-        Check out my GitHub
+        {{$t("github")}}
       </a>
       <br/>
+      <br/>
       <a class="cv-link" :href="cvPdf" download>
-        Download My CV
+        {{$t("cv")}}
       </a>
     </div>
   </div>
@@ -57,6 +61,17 @@ export default {
       cvPdf: "/static/my-cv.pdf",
     };
   },
+  methods: {
+    switchToItalian() {
+      this.$i18n.locale = 'it';
+    },
+    switchToEnglish() {
+      this.$i18n.locale = 'en';
+    },
+    switchToGerman() {
+      this.$i18n.locale = 'de';
+    },
+  },
 };
 </script>
 
@@ -64,7 +79,7 @@ export default {
 .about-me-container {
   max-width: 800px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 10px;
   text-align: center;
 
   @media (max-width: 580px) {
@@ -74,12 +89,12 @@ export default {
 
 .profile-section {
   background-color: #f9f9f9;
-  padding: 40px;
+  padding: 5px 40px 40px 40px;
   border-radius: 10px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 
   @media (max-width: 580px) {
-    padding: 20px;
+    padding: 5px 20px 20px 20px;
   }
 }
 
