@@ -8,7 +8,7 @@
       </nav>
 
       <div class="bio-polaroid">
-        <PolaroidPhoto image-src="/img/me.jpg" caption="me" style="transform: rotate(3deg); z-index: 2"/>
+        <PolaroidPhoto image-src="/img/me.jpg" :caption="$t('me')" style="transform: rotate(3deg); z-index: 2"/>
       </div>
 
       <h1>{{$t("hi")}}</h1>
@@ -30,8 +30,8 @@
       </p>
 
       <div class="bio-polaroid">
-        <PolaroidPhoto image-src="/img/island1.jpg" caption="Icelandic planes" style="transform: rotate(10deg)"/>
-        <PolaroidPhoto image-src="/img/island2.jpg" caption="Glacier Lake" style="transform: rotate(-5deg)"/>
+        <PolaroidPhoto image-src="/img/island1.jpg" :caption="$t('icelandicPlanes')" style="transform: rotate(10deg)"/>
+        <PolaroidPhoto image-src="/img/island2.jpg" :caption="$t('glacierLake')" style="transform: rotate(-5deg)"/>
       </div>
 
       <p class="bio-text">

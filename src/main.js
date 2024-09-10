@@ -3,10 +3,11 @@ import './style.css'
 import App from './App.vue'
 import {createI18n} from 'vue-i18n';
 
-// createApp(App).mount('#app')
-
 const messages = {
     en: {
+        me: "Me",
+        icelandicPlanes: "Icelandic Planes",
+        glacierLake: "Glacier Lake",
         hi: "Hi!",
         greeting: "My name is Peter Unterthurner and I'm a passionate web developer specializing in Vue.js, Java Spring, Python,\n" +
             "Typo3 (although i wish i wouldn't) and\n" +
@@ -24,6 +25,9 @@ const messages = {
         cv: "Download my CV",
     },
     it: {
+        me: "Io",
+        icelandicPlanes: "Aerei islandesi",
+        glacierLake: "Lago glaciale",
         hi: "Ciao!",
         greeting: "Mi chiamo Peter Unterthurner e sono un appassionato sviluppatore web specializzato in Vue.js, Java Spring, Python,\n" +
             "Typo3 (anche se vorrei non esserlo) e\n" +
@@ -41,6 +45,9 @@ const messages = {
         cv: "Scarica il mio CV",
     },
     de: {
+        me: "Ich",
+        icelandicPlanes: "Ebenen Islands",
+        glacierLake: "Gletschersee",
         hi: "Hallo!",
         greeting: "Mein Name ist Peter Unterthurner und ich bin ein leidenschaftlicher Webentwickler, der sich auf Vue.js, Java Spring, Python,\n" +
             "Typo3 (obwohl ich wünschte, ich wäre es nicht) und\n" +
@@ -59,14 +66,12 @@ const messages = {
     },
 };
 
-// Create an instance of vue-i18n
 const i18n = createI18n({
     locale: 'en', // Default language
     fallbackLocale: 'en', // Fallback language if translation is missing
     messages, // Translations
 });
 
-// Create and mount the app
 const app = createApp(App);
 app.use(i18n);
 app.mount('#app');
